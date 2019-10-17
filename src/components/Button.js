@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-
+import styles from './Button.css';
 export const TYPES = {
   PRIMARY: 'primary',
   WARNING: 'warning',
@@ -14,23 +14,23 @@ export const SIZES = {
   LARGE:  'large'
 }
 
-const BaseButton =({
+const BaseButton = ({
   text,
   onClick,
   type,
   disabled,
   buttonType,
   buttonSize
- }) => (
+  }) => (
   <button
     type={type}
     disabled={disabled}
     onClick={onClick}
-    classnames=(
+    classnames={
       styles.button,
       styles[ buttonType || TYPES.PRIMARY],
-      styles[ buttonSize || sizes.medium ]
-    )
+      styles[ buttonSize || SIZES.MEDIUM]
+    }
   >
     {text}
     </button>
